@@ -14,7 +14,7 @@ int main() {
 	show();
 	//Focus_Move(focus);
 	while (1) {
-		Key_Scan();
+		//Key_Scan();
 		//show();
 	}
 	return 0;
