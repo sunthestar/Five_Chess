@@ -2,6 +2,7 @@
 #include "Show.h"
 #include "Map.h"
 
+#include "stdio.h"
 #include "string.h"
 
 void Focus_Move(Point* focus) {
@@ -49,13 +50,32 @@ void Focus_Move(Point* focus) {
 
 void Chess_Falling(Point* focus) {
 	if (Chess_Flag) {
-		memcpy(Map[focus->y] + focus->x + 1 + (3 * (focus->x - 1) / 5), "○", 2);	
-		Chess_Flag = 0;
+		if (Decide[(focus->y + 1) / 2][(focus->x + 4) / 5] != 1 && Decide[(focus->y + 1) / 2][(focus->x + 4) / 5] != 2) {
+			memcpy(Map[focus->y] + focus->x + 1 + (3 * (focus->x - 1) / 5), "○", 2);	
+			Decide[(focus->y + 1) / 2][(focus->x + 4) / 5] = 1;
+			strcpy(Message, "当前执棋：白方");
+			Chess_Flag = 0;
+		}
+		else {
+			strcpy(Message, "当前位置无法落子！");
+		}
+		
 	}
 	else {
-		memcpy(Map[focus->y] + focus->x + 1 + (3 * (focus->x - 1) / 5), "●", 2);
-		Chess_Flag = 1;
+		if (Decide[(focus->y + 1) / 2][(focus->x + 4) / 5] != 1 && Decide[(focus->y + 1) / 2][(focus->x + 4) / 5] != 2) {
+			memcpy(Map[focus->y] + focus->x + 1 + (3 * (focus->x - 1) / 5), "●", 2);
+			Decide[(focus->y + 1) / 2][(focus->x + 4) / 5] = 2;
+			strcpy(Message, "当前执棋：黑方");
+			Chess_Flag = 1;
+		}
+		else {
+			strcpy(Message, "当前位置无法落子！");
+		}
 	}
 		
 	show();
+}
+
+void Is_Win(void) {
+	//if()
 }

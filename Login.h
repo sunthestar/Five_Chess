@@ -5,5 +5,6 @@
 
 void Focus_Move(Point*);
 void Chess_Falling(Point*);
+void Is_Win(void);
 
 #endif

@@ -12,4 +12,5 @@ void show() {
 		printf_s("\n");
 	}
 	
+	printf_s("%s", Message);
 }
