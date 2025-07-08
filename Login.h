@@ -4,5 +4,6 @@
 #include "Define.h"
 
 void Focus_Move(Point*);
+void Chess_Falling(Point*);
 
 #endif

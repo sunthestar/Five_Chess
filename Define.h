@@ -11,3 +11,4 @@ typedef struct {
 extern Point p;
 extern Point* focus;
 extern char Map[YLen][XLen];
+extern char Chess_Flag;

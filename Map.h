@@ -5,6 +5,7 @@
 #include "Define.h"
 
 void Map_Init(void);
+void Map_Flush(void);
 void Map_Move(char*, int, int);
 
 #endif

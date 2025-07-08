@@ -38,7 +38,7 @@ void Key_Scan() {
     }
 
     if (GetAsyncKeyState(VK_SPACE) & 0x8000) {
-        printf("Spacebar Pressed\n");
+        Chess_Falling(focus);
         Sleep(250);
     }
 }
