@@ -74,8 +74,118 @@ void Chess_Falling(Point* focus) {
 	}
 		
 	show();
+
+	Is_Win((focus->y + 1) / 2, (focus->x + 4) / 5);
 }
 
-void Is_Win(void) {
-	//if()
+void Is_Win(int x, int y) {
+	int Win_Flag = 0;
+	while (1) {
+	/**********************************Y轴判定***************************************************/
+		if (Decide[x][y] == Decide[x - 1][y] && Decide[x][y] == Decide[x - 2][y] && \
+			Decide[x][y] == Decide[x - 3][y] && Decide[x][y] == Decide[x - 4][y]){
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x - 1][y] && Decide[x][y] == Decide[x - 2][y] && \
+			Decide[x][y] == Decide[x - 3][y] && Decide[x][y] == Decide[x + 1][y]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x - 1][y] && Decide[x][y] == Decide[x - 2][y] && \
+			Decide[x][y] == Decide[x + 2][y] && Decide[x][y] == Decide[x + 1][y]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x - 1][y] && Decide[x][y] == Decide[x +3][y] && \
+			Decide[x][y] == Decide[x + 2][y] && Decide[x][y] == Decide[x + 1][y]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x + 4][y] && Decide[x][y] == Decide[x + 3][y] && \
+			Decide[x][y] == Decide[x + 2][y] && Decide[x][y] == Decide[x + 1][y]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+/************************************X轴判定**************************************************/
+		else if (Decide[x][y] == Decide[x][y + 4] && Decide[x][y] == Decide[x][y + 3] && \
+			Decide[x][y] == Decide[x][y + 2] && Decide[x][y] == Decide[x][y + 1]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x][y - 1] && Decide[x][y] == Decide[x][y + 3] && \
+			Decide[x][y] == Decide[x][y + 2] && Decide[x][y] == Decide[x][y + 1]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x][y - 1] && Decide[x][y] == Decide[x][y - 2] && \
+			Decide[x][y] == Decide[x][y + 2] && Decide[x][y] == Decide[x][y + 1]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x][y - 1] && Decide[x][y] == Decide[x][y - 2] && \
+			Decide[x][y] == Decide[x][y - 3] && Decide[x][y] == Decide[x][y + 1]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x][y - 1] && Decide[x][y] == Decide[x][y - 2] && \
+			Decide[x][y] == Decide[x][y - 3] && Decide[x][y] == Decide[x][y - 4]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+/*************************************对角线判定-左上************************************************/
+		else if (Decide[x][y] == Decide[x - 1][y - 1] && Decide[x][y] == Decide[x - 2][y - 2] && \
+			Decide[x][y] == Decide[x -3][y - 3] && Decide[x][y] == Decide[x - 4][y - 4]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x - 1][y - 1] && Decide[x][y] == Decide[x - 2][y - 2] && \
+			Decide[x][y] == Decide[x - 3][y - 3] && Decide[x][y] == Decide[x + 1][y + 1]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x - 1][y - 1] && Decide[x][y] == Decide[x - 2][y - 2] && \
+			Decide[x][y] == Decide[x + 2][y + 2] && Decide[x][y] == Decide[x + 1][y + 1]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x - 1][y - 1] && Decide[x][y] == Decide[x + 3][y + 3] && \
+			Decide[x][y] == Decide[x + 2][y + 2] && Decide[x][y] == Decide[x + 1][y + 1]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x + 4][y + 4] && Decide[x][y] == Decide[x + 3][y + 3] && \
+			Decide[x][y] == Decide[x + 2][y + 2] && Decide[x][y] == Decide[x + 1][y + 1]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+
+	/*************************************对角线判定-右上************************************************/
+		else if (Decide[x][y] == Decide[x - 1][y + 1] && Decide[x][y] == Decide[x - 2][y + 2] && \
+			Decide[x][y] == Decide[x - 3][y + 3] && Decide[x][y] == Decide[x - 4][y + 4]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x - 1][y + 1] && Decide[x][y] == Decide[x - 2][y + 2] && \
+			Decide[x][y] == Decide[x - 3][y + 3] && Decide[x][y] == Decide[x + 1][y - 1]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x - 1][y + 1] && Decide[x][y] == Decide[x - 2][y + 2] && \
+			Decide[x][y] == Decide[x + 2][y - 2] && Decide[x][y] == Decide[x + 1][y - 1]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x - 1][y + 1] && Decide[x][y] == Decide[x + 3][y - 3] && \
+			Decide[x][y] == Decide[x + 2][y - 2] && Decide[x][y] == Decide[x + 1][y - 1]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		else if (Decide[x][y] == Decide[x + 1][y - 1] && Decide[x][y] == Decide[x + 2][y - 2] && \
+			Decide[x][y] == Decide[x + 3][y - 3] && Decide[x][y] == Decide[x + 4][y - 4]) {
+			printf_s("\n游戏结束！");
+			exit(0);
+		}
+		return;
+	}
 }

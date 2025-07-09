@@ -34,25 +34,11 @@ void Key_Scan() {
     }
 
     if (GetAsyncKeyState(VK_ESCAPE) & 0x8000) {
-        system("cls");
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++){
-                printf_s("%d", Decide[i][j]);
-            }
-            printf_s("\n");
-        }
         exit(0);
     }
 
     if (GetAsyncKeyState(VK_SPACE) & 0x8000) {
         Chess_Falling(focus);
-        Sleep(250);
-    }
-
-    if (GetAsyncKeyState(VK_SHIFT) & 0x8000) {
-        for (int i = 0; i < 16; i++) {
-            printf_s("%s", Decide[i]);
-        }
         Sleep(250);
     }
 }
