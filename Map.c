@@ -2,7 +2,7 @@
 #include "stdio.h"
 #include "string.h"
 
-void Map_Init() {
+void Map_Init() {			//（不想说什么了）
 	strcpy_s(Map[0],	128,	"                                                                 ");
 	strcpy_s(Map[1],	128,	"  ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐  ");
 	strcpy_s(Map[2],	128,	"  │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │  ");
@@ -38,7 +38,7 @@ void Map_Init() {
 	strcpy_s(Map[32],	128,	"                                                                 ");
 }
 
-void Map_Flush() {
+void Map_Flush() {			//只刷新焦点移动的那几行，全刷新的话棋子也刷新了
 	strcpy_s(Map[0],	128,	"                                                                 ");
 	strcpy_s(Map[2],	128,	"  │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │  ");
 	strcpy_s(Map[4],	128,	"  │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │  ");

@@ -5,7 +5,7 @@
 #include "stdio.h"
 #include "string.h"
 
-void Focus_Move(Point* focus) {
+void Focus_Move(Point* focus) {				//焦点移动函数（给焦点加个提示框）
 	Map_Flush();
 	if (focus->y - 1 == 0) {
 		memcpy(Map[focus->y - 1] + focus->x - (((focus->x - 1) / 5) + 1), "┌", 2);
@@ -48,7 +48,7 @@ void Focus_Move(Point* focus) {
 	show();
 }
 
-void Chess_Falling(Point* focus) {
+void Chess_Falling(Point* focus) {				//落子函数（把焦点所在的棋盘制表符替换成棋子字符）
 	if (Chess_Flag) {
 		if (Decide[(focus->y + 1) / 2][(focus->x + 4) / 5] != 1 && Decide[(focus->y + 1) / 2][(focus->x + 4) / 5] != 2) {
 			memcpy(Map[focus->y] + focus->x + 1 + (3 * (focus->x - 1) / 5), "○", 2);	
@@ -78,7 +78,7 @@ void Chess_Falling(Point* focus) {
 	Is_Win((focus->y + 1) / 2, (focus->x + 4) / 5);
 }
 
-void Is_Win(int x, int y) {
+void Is_Win(int x, int y) {					//胜负判定函数（笨比懒得想算法就穷举了）
 	int Win_Flag = 0;
 	while (1) {
 	/**********************************Y轴判定***************************************************/
